@@ -11,7 +11,7 @@ class loginController extends controller{
 			$u = new Users();
 
 			if($u->doLogin($email, $pass)){
-				header("Location: ".BASE_URL."admin");
+				header("Location: ".BASE_URL."home");
 				exit;
 			} else {
 				$data['error'] = 'Email e/ou senha errada.';
@@ -22,6 +22,7 @@ class loginController extends controller{
 
 	public function logout(){
 		$u = new Users();
+		$u->setLoggedUser();
 		$u->logout();
 
 		header("Location: ".BASE_URL);

@@ -27,15 +27,52 @@ select{
 }
 
 input[type=submit]{
-	width: 30%;
-	padding: 2% 0;
+	width: 25%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	border:none;
-	background: #32CD99 !important;
+	background: #224074;
+	margin: 20px 0;
+	border:none;
+	cursor: pointer;
 	color: #fff;
 }
-.imagesTable{
-	width: 100px;
+
+.p_item{
+	height: 30px;
+	line-height: 30px;
+}
+.btn-add{
+	width: 25%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border:none;
+	background: #224074;
+	margin: 20px 0;
+}
+.btn-add a{
+	color: #fff;
+	    padding: 5% 16%;
+}
+.btn-add a i{
+	color: #fff;
+
+}
+
+.tb > thead{
+background-color: #ddd;
+}
+.tb > tbody > tr.odd{
+	background-color: #eee;
+}
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td{
+	border-top:none !important;
 }
 .left-menu{
 	width: 200px;
@@ -141,16 +178,21 @@ display: none;
 .tabitem{
 	border-bottom: 1px solid #000;
 	align-items: center;
+	display: flex;
+	justify-content: center;
 	width: 50%;
 	background: #eee;
 	cursor: pointer;
+	padding: 20px;
 
 }
 
-.tabbody{
-	display: none;
-}
 .activetab{
 	border-bottom: 1px solid #fff;
 	background: #fff;
+}
+
+
+.tabbody{
+	display: none;
 }

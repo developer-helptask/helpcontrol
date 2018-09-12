@@ -15,14 +15,6 @@ class controller{
 	public function loadTemplate($viewName, $viewData = array()){
 		
 		extract($viewData);
-		$sql = "SELECT * FROM category";
-		$sql = $this->db->query($sql);
-
-		$menu = array();
-		if($sql->rowCount() > 0){
-			$menu =  $sql->fetchAll();
-		}
-		
 		require 'views/template.php';
 	}
 

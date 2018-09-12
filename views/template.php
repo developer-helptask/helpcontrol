@@ -1,128 +1,50 @@
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DN | Distribuidora de Naturais</title>
-		<link type="text/css" rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<title>Área Administrativa</title>
 
-
+	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/template.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
 <body>
+	<div class="left-menu">
+		<div class="company_name">
+			<?php echo $viewData['company_name']; ?>
+		</div>
 
-<section id="header" class="">
-
-<div class="container-header-footer space-bt">
-
-	<div class="logo"><img src="<?php echo BASE_URL; ?>/assets/images/logotipo-dn.png"></div>
-
-	<div class="menu">
-
-		<nav>
-
-			<span class="abrir-nav">
-            	<div class="mm_line"></div>
-            	<div class="mm_line"></div>
-            	<div class="mm_line"></div>
-            </span>
-				
-			<div class="menu-header">
-				<ul id="menu-principal" class="menu">
-					<li><a>Home</a></li>
-					<li><a href="<?php echo BASE_URL; ?>quemsomos">Quem Somos</a></li>
-					<li><a>Produtos</a>
-						<ul class="sub-menu">
-							<?php foreach($menu as $menuitem): ?>
-							<li><a href="<?php echo BASE_URL; ?>category/ver/<?php echo $menuitem['id'];?>"><?php echo $menuitem['name'] ?></a></li>
-						<?php endforeach; ?>
-						</ul>
-					</li>
-					<li><a href="<?php echo BASE_URL; ?>contato">Contato</a></li>
-				</ul>
-
-			</div>
-            
-
-		</nav>
-
+		<div class="menuarea">
+			<ul>
+				<li><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
+				<li><a href="<?php echo BASE_URL; ?>permission">Permissões</a></li>
+				<li><a href="<?php echo BASE_URL; ?>categorias">Categorias</a></li>
+				<li><a href="<?php echo BASE_URL; ?>produtos">Produtos</a></li>
+				<li><a href="#">Suporte</a></li>
+			</ul>
+		</div>
 	</div>
-
+	<div class="container">
+		<div class="top">
+			<div class="top_right"><a href="<?php echo BASE_URL; ?>/login/logout">SAIR</a></div>
+			<div class="top_right"><a href="<?php echo BASE_URL; ?>">SITE</a></div>
+			<div class="top_right"><?php echo $viewData['user_name']; ?></div>
+		</div>
+		<div class="area">
+			
+	<?php $this->loadViewInTemplateAdmin($viewName, $viewData); ?>
+		</div>
+	</div>
 	
 
 
-
-</div>
-
-
-
-</section>
-
-<div class="banner">
-	<div class="slideshow" id="slideshow">
-			        
-
-		<div class="slideshowarea">
-			<?php foreach ($lista as $item): ?>
-			<div class="slide">
-				<img src="<?php echo BASE_URL; ?>assets/images/uploads/banners/<?php echo $item['images']; ?>">
-			</div>
-			<?php endforeach; ?>
-			
-		</div>
-		<div class="slidebullets">
-
-			<?php foreach ($lista as $item): ?>
-			<div class="bullets" onclick="mudarSlide(<?php echo $item['id']; ?>)"></div>
-
-			<?php endforeach; ?>
-		</div>
-	</div>
-</div>
-
-	<?php $this->loadViewInTemplate($viewName, $viewData); ?>
-
-<script
+	 <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>	
- <script  src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
- <script  src="<?php echo BASE_URL; ?>assets/js/slide.js"></script>
-
-<section id="footer">
-<div class="container-header-footer flex-end">
-
-<div class="menu align-start">
-
-		<nav>
-
-			<span class="abrir-nav">
-            	<div class="mm_line"></div>
-            	<div class="mm_line"></div>
-            	<div class="mm_line"></div>
-            </span>
-
-			<div class="menu-header">
-
-				<ul id="menu-principal" class="menu">
-					<li><a>Home</a></li>
-					<li><a href="<?php echo BASE_URL; ?>quemsomos">Quem Somos</a></li>
-					<li><a>Produtos</a>
-						<ul class="sub-menu">
-							<li><a href="#">ted</a></li>
-						</ul>
-					</li>
-					<li><a href="<?php echo BASE_URL; ?>contato">Contato</a></li>
-				</ul>
-
-
-			</div>
-
-		</nav>
-
-	</div>
-
-</div>
-</section>
-
+  crossorigin="anonymous"></script>
+ <script
+  src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
+ <script
+  src="<?php echo BASE_URL; ?>assets/js/action.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/b-1.5.2/b-html5-1.5.2/datatables.min.js"></script>
 </body>
 </html>
